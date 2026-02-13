@@ -12,10 +12,8 @@ A file-tree sidebar with Nerd Font icons, mouse support, and git integration.
 - Single-click to open files and toggle folders
 - Git status indicators per file (added, modified, deleted, renamed, untracked)
 - Statusline shows current branch, insertions/deletions, and untracked count
-- Inline rename, create file/directory, delete, copy, cut, and paste
 - Folders-first sorting, dotfile and gitignore visibility toggles
 - Auto-refresh on a configurable timer
-- Keyboard-driven: single-key commands when the sidebar is focused
 
 ### galaktic_lsp
 
@@ -78,13 +76,11 @@ Toggle with the `sidebar` command or bind it to a key. While focused:
 
 | Key | Action |
 | --- | --- |
-| `o` / Enter / Click | Open file or toggle folder |
-| `r` | Rename |
-| `n` | New file |
-| `m` | New directory |
-| `d` | Delete |
-| `c` / `x` / `v` | Copy / cut / paste |
-| `f` | Refresh |
+| Enter / Click | Open file or toggle folder |
+| Left / Right | Collapse / expand folder |
+| Up / Down | Navigate |
+
+The `sidebar-refresh` command forces a tree rebuild.
 
 ### LSP
 

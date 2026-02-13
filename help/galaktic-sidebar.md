@@ -6,11 +6,6 @@ A fast, lightweight file sidebar for micro with Nerd Font icons, mouse support, 
 
 - `sidebar` toggle the sidebar
 - `sidebar-refresh` rebuild the tree
-- `sidebar-open` open file or toggle folder
-- `sidebar-rename [name]` rename selected item
-- `sidebar-newfile [name]` create file in selected directory
-- `sidebar-newdir [name]` create directory in selected directory
-- `sidebar-delete` delete selected item
 
 ## Keybindings
 
@@ -18,15 +13,6 @@ A fast, lightweight file sidebar for micro with Nerd Font icons, mouse support, 
 - Left/Right collapse or expand folders
 - Enter open file or toggle folder
 - Mouse click open file or toggle folder
-- `o` open file or toggle folder
-- `r` rename selected item
-- `n` create file
-- `m` create directory
-- `d` delete selected item
-- `f` refresh tree
-- `c` copy selected item
-- `x` cut selected item
-- `v` paste into selected directory
 
 ## Options
 
