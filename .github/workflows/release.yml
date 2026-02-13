@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build galaktic_sidebar zip
+        run: |
+          mkdir -p build/galaktic_sidebar/help
+          cp galaktic-sidebar.lua build/galaktic_sidebar/
+          cp syntax.yaml build/galaktic_sidebar/
+          cp repo.json build/galaktic_sidebar/
+          cp help/galaktic-sidebar.md build/galaktic_sidebar/help/
+          cp help/control-scheme.md build/galaktic_sidebar/help/
+          cd build && zip -r ../galaktic_sidebar.zip galaktic_sidebar/
+
+      - name: Build galaktic_lsp zip
+        run: |
+          mkdir -p build/galaktic_lsp/help
+          cp galaktic_lsp/main.lua build/galaktic_lsp/
+          cp galaktic_lsp/config.lua build/galaktic_lsp/
+          cp galaktic_lsp/json.lua build/galaktic_lsp/
+          cp repo.json build/galaktic_lsp/
+          cp galaktic_lsp/help/galaktic-lsp.md build/galaktic_lsp/help/
+          cd build && zip -r ../galaktic_lsp.zip galaktic_lsp/
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            galaktic_sidebar.zip
+            galaktic_lsp.zip
+          generate_release_notes: true

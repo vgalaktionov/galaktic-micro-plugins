@@ -1,0 +1,19 @@
+filetype: galaktic_sidebar
+
+rules:
+    - constant: "^(~|/).+$"
+    - comment: "^-+$"
+    - symbol.operator: "^\\s*[>v]"
+    - constant.bool: " [ADMRY?] "
+    - type: "|"
+    - identifier: "|"
+    - special: ""
+    - type.keyword: "|"
+    - symbol.operator: "|"
+    - preproc: ""
+    - constant.string: ""
+    - constant.specialChar: "||"
+    - statement: ""
+    - type: "|"
+    - constant.number: ""
+    - constant.bool: ""
